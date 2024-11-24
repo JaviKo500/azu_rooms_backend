@@ -21,7 +21,11 @@ collections:
       singleton: false
       sort: 1
       sort_field: null
-      translations: null
+      translations:
+        - language: es-419
+          plural: Clientes
+          singular: Cliente
+          translation: Clientes
       unarchive_value: draft
       versioning: false
     schema:
@@ -186,7 +190,6 @@ fields:
             foreground: var(--theme--warning)
             text: $t:archived
             value: archived
-        showAsDot: true
       field: status
       group: null
       hidden: false
@@ -207,7 +210,9 @@ fields:
       required: false
       sort: 2
       special: null
-      translations: null
+      translations:
+        - language: es-419
+          translation: Estado
       validation: null
       validation_message: null
       width: full
@@ -410,7 +415,9 @@ fields:
       required: false
       sort: 4
       special: null
-      translations: null
+      translations:
+        - language: es-419
+          translation: Teléfono
       validation: null
       validation_message: null
       width: full
@@ -437,8 +444,9 @@ fields:
     meta:
       collection: customers
       conditions: null
-      display: null
-      display_options: null
+      display: user
+      display_options:
+        circle: true
       field: user
       group: null
       hidden: false
@@ -455,7 +463,9 @@ fields:
       sort: 3
       special:
         - m2o
-      translations: null
+      translations:
+        - language: es-419
+          translation: Usuario
       validation: null
       validation_message: null
       width: full
@@ -2380,6 +2390,53 @@ fields:
       has_auto_increment: false
       foreign_key_table: customers
       foreign_key_column: id
+  - collection: rooms
+    field: location
+    type: geometry.Point
+    meta:
+      collection: rooms
+      conditions: null
+      display: null
+      display_options: null
+      field: location
+      group: null
+      hidden: false
+      interface: map
+      note: null
+      options:
+        defaultView:
+          bearing: 0
+          center:
+            lat: -2.8993101166160073
+            lng: -79.00692110745399
+          pitch: 0
+          zoom: 13.591421296090873
+        geometryType: Point
+      readonly: false
+      required: true
+      sort: 24
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: location
+      table: rooms
+      data_type: POINT
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
   - collection: rooms_files
     field: id
     type: integer
